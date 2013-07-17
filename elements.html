@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+
+  <head>
+    <meta charset="utf-8">
+    <script src="https://raw.github.com/buntarb/imazzine-repository/master/zz-angular.js"></script>
+    <script src="https://raw.github.com/buntarb/imazzine-repository/master/zz-angular-ui.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://raw.github.com/buntarb/imazzine-repository/master/zz-bootstrap-page.css">
+    <link rel="stylesheet" href="https://raw.github.com/buntarb/imazzine-repository/master/zz-bootstrap-elements.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body style="background-color: #ffffff;">
+    <hr>
+    <div ng-controller="DateCtrl">
+      <input type="text" ng-click="toggleCollapse()" value="{{dt | date:'dd-MM-yyyy'}}">
+      <button class="btn" ng-click="toggleCollapse()">{{dt | date:'dd-MM-yyyy'}}</button>
+      <div collapse="isCollapsed">
+        <datepicker
+          ng-model="dt"
+          show-weeks="showWeeks"
+          starting-day="1"
+          date-disabled="disabled(date, mode)"
+          min="minDate"
+          max="'2015-06-22'">    
+        </datepicker>
+        <button class="btn" ng-click="today()">Today</button>
+      </div>
+    </div>
+    <hr>
+    <a class="btn">По умолчанию</a>
+    <a class="btn" disabled>По умолчанию</a>
+    <hr>
+    <div>
+      <input type="text">
+      <a class="btn btn-primary">Основная</a>
+      <a class="btn btn-primary" disabled>Основная</a>
+    </div>
+    <hr>
+    <a class="btn btn-info">Инфо</a>
+    <a class="btn btn-info" disabled>Инфо</a>
+    <hr>
+    <a class="btn btn-success">Успех</a>
+    <a class="btn btn-success" disabled>Успех</a>
+    <hr>
+    <a class="btn btn-warning">Предупреждение</a>
+    <a class="btn btn-warning" disabled>Предупреждение</a>
+    <hr>
+    <a class="btn btn-danger">Опасная</a>
+    <a class="btn btn-danger" disabled>Опасная</a>
+    <hr>
+  </body>
+
+</html>
